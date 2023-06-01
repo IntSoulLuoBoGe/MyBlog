@@ -1,0 +1,110 @@
+### 热门文章列表
+GET {{blog_host}}/article/hotArticleList
+Content-Type: application/json
+
+{
+  "code":200,
+  "data":[
+    {
+      "id":"1",
+      "title":"Spring Boot文件上传功能的实现",
+      "viewCount":"105"
+    }
+  ],
+  "msg":"操作成功"
+}
+
+### 查询分类列表
+GET {{blog_host}}/category/getCategoryList
+Content-Type: application/json
+
+{
+  "code":200,
+  "data":[
+    {
+      "id":"1",
+      "name":"Java"
+    },
+    {
+      "id":"2",
+      "name":"Python"
+    }
+  ],
+  "msg":"操作成功"
+}
+
+### 查询对应分类下的文章
+GET {{blog_host}}/article/articleList?pageNum=1&pageSize=10&categoryId=0
+Content-Type: application/json
+
+{
+  "code": 200,
+  "data": {
+    "rows": [
+      {
+        "categoryName": "Java",
+        "createTime": "2023-02-23 23:20:11",
+        "id": "1",
+        "summary": "使用Spring Boot实现文件上传及其相关的注意事项",
+        "thumbnail": "https://img1.baidu.com/it/u=4026470308,2412268569&fm=253&fmt=auto&app=138&f=JPEG?w=824&h=500",
+        "title": "Spring Boot文件上传功能的实现",
+        "viewCount": "105"
+      },
+      {
+        "categoryName": "Python",
+        "createTime": "2023-03-21 14:58:30",
+        "id": "2",
+        "summary": "Python读写文本文件学习笔记",
+        "thumbnail": "https://cdn2.byhy.net/imgs/gh/36462795_36383834-5d7bc92c-15c8-11e8-8821-da79d117d45c.png",
+        "title": "Python文件读写",
+        "viewCount": "122"
+      }
+    ],
+    "total": "2"
+  },
+  "msg": "操作成功"
+}
+
+### 文章详情接口
+GET {{blog_host}}/article/{id}
+Content-Type: application/json
+
+{
+  "code": 200,
+  "data": {
+    "categoryId": "1",
+    "categoryName": "Java",
+    "content": "文章内容",
+    "createTime": "2023-02-23 23:20:11",
+    "id": "1",
+    "isComment": "0",
+    "title": "Spring Boot文件上传功能的实现",
+    "viewCount": "105"
+  },
+  "msg": "操作成功"
+}
+
+### 友链查询
+GET {{blog_host}}/link/getAllLink
+Content-Type: application/json
+
+{
+  "code": 200,
+  "data": [
+    {
+      "address": "https://www.baidu.com",
+      "description": "Baidu",
+      "id": "1",
+      "logo": "https://storage-public.zhaopin.cn/15427893323/3b46ed.jpg",
+      "name": "百度"
+    },
+    {
+      "address": "https://www.qq.com",
+      "description": "Tencent",
+      "id": "2",
+      "logo": "https://bpic.51yuansu.com/pic3/cover/00/69/38/58abe_610.jpg",
+      "name": "腾讯"
+    }
+  ],
+  "msg": "操作成功"
+}
